@@ -124,11 +124,11 @@ for idx in range(arr.shape[1]):
 
 - **1、简单入门思路：定长字符识别 **
 
-可以将赛题抽象为一个定长字符识别问题，在赛题数据集中大部分图像中字符个数为2-4个，最多的字符个数为6个。                 
+可以将赛题抽象为一个定长字符识别问题，在赛题数据集中大部分图像中字符个数为2-4个，最多的字符个数为6个。           
 因此可以对于所有的图像都抽象为6个字符的识别问题，字符23填充为23XXXX，字符231填充为231XXX。      
 ![标注](IMG/Task01/23xxxxxx.png)   
 
-经过填充之后，原始的赛题可以简化了6个字符的分类问题。在每个字符的分类中会进行11个类别的分类，假如分类为填充字符，则表明该字符为空。         
+经过填充之后，原始的赛题可以简化了6个字符的分类问题。在每个字符的分类中会进行11个类别的分类，假如分类为填充字符，则表明该字符为空。可参考Google2014年的论文《Multi-digit Number Recognition from Street View Imagery using Deep Convolutional Neural Networks》，该论文提出了基于深度卷积神经网络的定长字符分类识别方法。
 - **2、专业字符识别思路：不定长字符识别 **
         
 
@@ -161,11 +161,12 @@ CRNN采取的架构是CNN+RNN+CTC，cnn提取图像像素特征，rnn提取图�
 
 References
 
-1. https://github.com/datawhalechina/team-learning/blob/master/03%20%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A7%86%E8%A7%89/%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A7%86%E8%A7%89%E5%AE%9E%E8%B7%B5%EF%BC%88%E8%A1%97%E6%99%AF%E5%AD%97%E7%AC%A6%E7%BC%96%E7%A0%81%E8%AF%86%E5%88%AB%EF%BC%89/Datawhale%20%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8CV%20-%20Task%2001%20%E8%B5%9B%E9%A2%98%E7%90%86%E8%A7%A3%20.md
-2. https://blog.csdn.net/wsp_1138886114/article/details/82555728?utm_medium=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-2.nonecase&depth_1-utm_source=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-2.nonecase
-3. https://cloud.tencent.com/developer/article/1064906
-4. https://blog.csdn.net/guoyunfei20/article/details/78744753
-5. https://www.cnblogs.com/fariver/p/7446921.html
+1. [Datawhale 零基础入门CV赛事-Task1 赛题理解](https://github.com/datawhalechina/team-learning/blob/master/03%20%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A7%86%E8%A7%89/%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A7%86%E8%A7%89%E5%AE%9E%E8%B7%B5%EF%BC%88%E8%A1%97%E6%99%AF%E5%AD%97%E7%AC%A6%E7%BC%96%E7%A0%81%E8%AF%86%E5%88%AB%EF%BC%89/Datawhale%20%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8CV%20-%20Task%2001%20%E8%B5%9B%E9%A2%98%E7%90%86%E8%A7%A3%20.md)
+2. [CRNN-基于序列的（端到端）图像文本识别](https://blog.csdn.net/wsp_1138886114/article/details/82555728?utm_medium=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-2.nonecase&depth_1-utm_source=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-2.nonecase)
+3. [SSD: Single Shot MultiBox Detector 深度学习笔记之SSD物体检测模型](https://cloud.tencent.com/developer/article/1064906)
+4. [YOLO](https://blog.csdn.net/guoyunfei20/article/details/78744753)
+5. [YOLO原理](https://www.cnblogs.com/fariver/p/7446921.html)
+6. [Multi-digit Number Recognition from Street View Imagery using Deep Convolutional Neural Networks](https://arxiv.org/pdf/1312.6082.pdf)
 
 
 
